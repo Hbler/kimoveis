@@ -30,6 +30,7 @@ export const checkAuthMiddleware = async (
       }
 
       req.user = {
+        isActive: decoded.isActive,
         isAdm: decoded.isAdm,
         id: decoded.sub,
       };
