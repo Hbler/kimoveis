@@ -11,7 +11,7 @@ export const validationMiddleware =
       next();
     } catch (error: any) {
       return res.status(400).json({
-        error: error.errors?.join(", "),
+        message: error.errors?.join(", "),
       });
     }
   };
