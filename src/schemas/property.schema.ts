@@ -7,13 +7,13 @@ const addressSchema: SchemaOf<IAddressRequest> = yup.object().shape({
   zipCode: yup
     .string()
     .required()
-    .test("len", "Must be exactly 8 characters", (val) => val!.length === 8),
+    .test("len", "Invalid zip code", (val) => val!.length === 8),
   number: yup.string().required(),
   city: yup.string().required(),
   state: yup
     .string()
     .required()
-    .test("len", "Must be exactly 2 characters", (val) => val!.length === 2),
+    .test("len", "Invalid state", (val) => val!.length === 2),
 });
 
 export const propertySchema: SchemaOf<IPropertyRequest> = yup.object().shape({

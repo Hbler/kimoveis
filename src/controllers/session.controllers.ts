@@ -1,8 +1,12 @@
 import { Request, Response } from "express";
 import { IUserLogin } from "../interfaces/users";
 
-const createSessionController = async (req: Request, res: Response) => {
+import newSessionService from "../services/session/newSession.service";
+
+export const newSessionController = async (req: Request, res: Response) => {
   const { email, password }: IUserLogin = req.body;
-  //   const token = await createSessionService({ email, password });
-  //   return res.json({ token });
+
+  const token = await newSessionService({ email, password });
+
+  return res.json({ token });
 };

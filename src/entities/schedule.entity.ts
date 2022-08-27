@@ -16,6 +16,6 @@ export class Schedule {
   @ManyToOne(() => Property)
   property: Property;
 
-  @ManyToOne(() => User)
+  @ManyToOne(() => User, { eager: true })
   user: User;
 }
